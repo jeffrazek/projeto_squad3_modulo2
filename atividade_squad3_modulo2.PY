@@ -25,7 +25,7 @@ class Pesquisa():
         respostas_usuario["idade"] = self.get_idade()
         respostas_usuario["genero"] = self.get_genero()
 
-        respostas_usuario["pergunta1"] = input("\nVocê costuma jogar games Multiplayer?: ")
+        respostas_usuario["pergunta1"] = input("\nVocê costuma jogar games Multiplayer?:")
         respostas_usuario["pergunta2"] = input("\nVocê costuma jogar games Singleplayer?: ")
         respostas_usuario["pergunta3"] = input("\nVocê costuma jogar em dispositívos portáteis?: ")
         respostas_usuario["pergunta4"] = input("\nVocê costuma jogar em dispositivos de mesa?: ")
@@ -60,3 +60,11 @@ while True:
     print()
     print("Obrigado por responder nossa pesquisa!")
     print("#"*50)
+
+
+
+# Melhorias
+
+# adicionar recurso de respostas em 3 números:
+# 1 para sim, 2 para não, 3 para não sei responder
+# transformar o número em palavras através de uma função
