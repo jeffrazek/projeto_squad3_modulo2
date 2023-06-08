@@ -25,10 +25,10 @@ class Pesquisa():
         respostas_usuario["idade"] = self.get_idade()
         respostas_usuario["genero"] = self.get_genero()
 
-        respostas_usuario["pergunta1"] = input("\nVocê costuma jogar games Multiplayer?:")
-        respostas_usuario["pergunta2"] = input("\nVocê costuma jogar games Singleplayer?: ")
-        respostas_usuario["pergunta3"] = input("\nVocê costuma jogar em dispositívos portáteis?: ")
-        respostas_usuario["pergunta4"] = input("\nVocê costuma jogar em dispositivos de mesa?: ")
+        respostas_usuario["pergunta1"] = input("\nUtiliza o Ifood com frequência?: ")
+        respostas_usuario["pergunta2"] = input("\nO formato de serviço de entrega te agrada?: ")
+        respostas_usuario["pergunta3"] = input("\nO aplicativo Ifood melhorou sua vida?: ")
+        respostas_usuario["pergunta4"] = input("\nRecomendaria o Ifood para outras pessoas?: ")
         respostas_usuario["data_hora"] = datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 
         self.respostas.append(respostas_usuario)
@@ -39,24 +39,24 @@ class Pesquisa():
         print(f"Respostas das perguntas:\nPergunta 1 = {resposta_usuario['pergunta1']} \nPergunta 2 = {resposta_usuario['pergunta2']} \nPergunta 3 = {resposta_usuario['pergunta3']} \nPergunta 4 = {resposta_usuario['pergunta4']}")
 
     def criar_csv(self):
-        with open("Pesquisa_Games.csv", "w", newline="", encoding="utf-8") as pesquisa_csv:
+        with open("Pesquisa_Ifood.csv", "w", newline="", encoding="utf-8") as pesquisa_csv:
             cabecalho = list(self.respostas[0].keys())
             writer = csv.DictWriter(pesquisa_csv, fieldnames=cabecalho)
             writer.writeheader()
             writer.writerows(self.respostas)
 #----------------------------------------------------------------------------------------------------------------------------------------------#
-video_games = Pesquisa()
+video_ifood = Pesquisa()
 
 while True:
-    print("\n Bem vindo a pesquisa de Jogos!")
-    video_games.obter_idade()
-    if video_games.get_idade() == "00":
+    print("\n Bem vindo a pesquisa do Ifood!")
+    video_ifood.obter_idade()
+    if video_ifood.get_idade() == "00":
         print("\nPesquisa Finalizada")
         exit()
-    video_games.obter_genero()
-    video_games.questionario()
-    video_games.mostra_respostas()
-    video_games.criar_csv()
+    video_ifood.obter_genero()
+    video_ifood.questionario()
+    video_ifood.mostra_respostas()
+    video_ifood.criar_csv()
     print()
     print("Obrigado por responder nossa pesquisa!")
     print("#"*50)
