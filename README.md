@@ -1,6 +1,7 @@
 <h1>DESAFIO PESQUISA DIGITAL</h1>
 
 > Projeto em Grupo Módulo 2 - Resilia Educação
+
 > Status: Concluido ✅
 
 Recebemos uma nova solicitação de projeto e
